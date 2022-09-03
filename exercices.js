@@ -4,26 +4,29 @@
  *
  **/
 function numDuplicados(text) {
-  const letterObject = {};
+  const letterObject = {}
 
   for (let i = 0; i < text.length; i++) {
     if (letterObject[text[i]]) {
-      letterObject[text[i]]++;
+      letterObject[text[i]]++
     } else {
-      letterObject[text[i]] = 1;
+      letterObject[text[i]] = 1
     }
   }
 
-  const itemsArray = Object.entries(letterObject);
-  let result = 0;
+  const itemsArray = Object.entries(letterObject)
+  let result = 0
 
   for (let i = 0; i < itemsArray.length; i++) {
     if (itemsArray[i][1] > 1) {
-      result++;
+      result++
     }
   }
-  return result;
+  return result
 }
+
+const numDuplicadosTesttext = "hola como estas"
+// console.log(numDuplicados(numDuplicadosTesttext))
 
 /**
  * Escribe una función llamada frecuencias que reciba una cadena de
@@ -31,19 +34,23 @@ function numDuplicados(text) {
  * caracter (exceptuando el espacio en blanco)
  */
 function frecuencias(text) {
-  const textObject = {};
+  const textObject = {}
 
   let cutString = text.split("").forEach((letter) => {
     if (letter !== " ") {
       if (textObject[letter]) {
-        textObject[letter] += 1;
+        textObject[letter] += 1
       } else {
-        textObject[letter] = 1;
+        textObject[letter] = 1
       }
     }
   });
-  return textObject;
+  return textObject
 }
+
+const frecuencyText="habia una vez"
+// console.log(frecuencias(frecuencyText))
+
 
 /**
  * Crea una función llamada caracteresEnComun que recibe dos argumentos: str1 y str2. La función debe
@@ -51,19 +58,24 @@ function frecuencias(text) {
  *
  */
 function caracteresEnComun(str1, str2) {
-  const str1Array = str1.split("");
+  const str1Array = str1.split("")
   const commonElements = str1Array
     .filter((letter) => letter !== " ")
-    .filter((word) => str2.includes(word));
-  const result = [];
+    .filter((word) => str2.includes(word))
+  const result = []
 
   commonElements.forEach((commonElementArrayLetter) => {
     if (!result.some((resultWord) => resultWord === commonElementArrayLetter)) {
-      result.push(commonElementArrayLetter);
+      result.push(commonElementArrayLetter)
     }
-  });
-  return result;
+  })
+  return result
 }
+
+const caracteresEnComunStr1 = "hola buen dia"
+const caracteresEnComunStr2 = "como te llamas"
+// console.log(caracteresEnComun(caracteresEnComunStr1, caracteresEnComunStr2))
+
 
 /**​​Escribir una función llamada ajustarTexto​ que reciba dos argumentos:  un string y un número (que
  * representa una longitud).  La función debe retornar la cadena ajustada a la longitud recibida. Si
@@ -73,17 +85,19 @@ function caracteresEnComun(str1, str2) {
  * si num<letter.length letter.slice 0,num
  * si no letter.push ""
  */
-
 function ajustarTexto(letter, num) {
-  let result = letter.slice();
-
+  let result = letter.slice()
   if (result.length > num) {
-    return result.slice(0, num);
+    return result.slice(0, num)
 
   } else { 
     for (let i = result.length; i <= num; i++) {
-      result += " ";
+      result += " "
     }
   }
-  return result;
+  return result
 }
+
+const ajustarTextoLetter="curso"
+const ajustarTextoNum = 7
+// console.log(ajustarTexto(ajustarTextoLetter, ajustarTextoNum))

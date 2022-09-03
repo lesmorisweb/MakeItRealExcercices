@@ -5,16 +5,17 @@
  */
 //ESTE EJERCICO DE LA PAGINA DE LEETCODE TIENE UN BUG, el return de la funcion no se toma correctamente al hacer la evaluacion
 function moveZeroes(nums) {
-  const zeros = nums.filter((num) => num === 0);
-  const numbers = nums.filter((num) => num !== 0);
-  return numbers.concat(zeros);
+  const zeros = nums.filter((num) => num === 0)
+  const numbers = nums.filter((num) => num !== 0)
+  return numbers.concat(zeros)
 }
 
 // LeetCode ejemplo1:
-const leetCodeExampleNumbers = [0, 1, 0, 3, 12];
+const leetCodeExampleNumbers = [0, 1, 0, 3, 12]
 
-const testNumbers2 = [1, 2, 0, 4, 0, 0, 5];
-console.log(moveZeroes(testNumbers1));
+const testNumbers2 = [1, 2, 0, 4, 0, 0, 5]
+// console.log(moveZeroes(testNumbers2))
+
 
 /**
  * 1. Two Sum
@@ -28,11 +29,16 @@ function twoSum(nums, target) {
         
       if (nums[numsIndex] + nums[someIndex] === target &&
             numsIndex !== someIndex) {
-        return [Number(numsIndex), Number(someIndex)];
+        return [Number(numsIndex), Number(someIndex)]
       }
     }
   }
 }
+
+const twoSumTestNum = [1,5,3,8,2]
+const twoSumTestTarget = 9
+console.log(twoSum(twoSumTestNum, twoSumTestTarget))
+
 
 /**
  * 242. Valid Anagram
@@ -40,9 +46,13 @@ function twoSum(nums, target) {
  * An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically
  * using all the original letters exactly once.
  */
-function validAnagram(s, t) {
-  const sOrganiced = s.split("").sort().join("");
-  const tOrganiced = t.split("").sort().join("");
+function validAnagram(string1, string2) {
+  const sOrganiced = string1.split("").sort().join("")
+  const tOrganiced = string2.split("").sort().join("")
 
   return sOrganiced === tOrganiced;
 }
+
+const validAnagramTestString1 = "anagram"
+const validAnagramTestString2 = "naargma"
+// console.log(validAnagram(validAnagramTestString1, validAnagramTestString2)) 
